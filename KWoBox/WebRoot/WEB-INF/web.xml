@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>js_jsp_utf8</display-name>
+	<!--websocket 传输Text大小限制 线程池的核心容量大小10485760(10M) 10240(10k) -->
+	<context-param>
+		<param-name>org.apache.tomcat.websocket.textBufferSize</param-name>
+		<param-value>102400</param-value>
+	</context-param>
+	<!--websocket executor 线程池的核心容量大小 -->
+	<context-param>
+		<param-name>org.apache.tomcat.websocket.executorCoreSize</param-name>
+		<param-value>500</param-value>
+	</context-param>
+	<!--websocket executor 线程池的最大容量大小,默认为200 -->
+	<context-param>
+		<param-name>org.apache.tomcat.websocket.executorMaxSize</param-name>
+		<param-value>5000</param-value>
+	</context-param>
+	<!--executor线程池中空闲进程所保留的最大时间。如果未指定，则默认为60秒 -->
+	<context-param>
+		<param-name>org.apache.tomcat.websocket.executorKeepAliveTimeSeconds</param-name>
+		<param-value>150</param-value>
+	</context-param>
+
+	<!-- 设置session超时时间为0,即关闭Session -->
+	<session-config>
+		<session-timeout>0</session-timeout>
+	</session-config>
+
+	<!-- 应用此接口时，要在web.xml文件内定义“监听器类”的名称，此时要注意： 在Servlet规范中并未限制一个Web应用程序只能对应一个“监听器类”，但是在web.xml内定义<listener>元素时得注意下列两点： 
+		<listener>元素必须出现在任何Context起始参数（由<context-param>元素所定义）之后。 <listener>元素必须出现在任何Servlet实体（由<servlet>元素所定义）之前。 -->
+	<!-- 监听Tomcat启动和停止 -->
+	<listener>
+		<listener-class>com.chinapalms.kwobox.servermonitor.ServerMonitorServletContextListener</listener-class>
+	</listener>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>KWoBoxServelet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.KWoBoxServelet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FaceSettingServelet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.FaceSettingServelet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>FaceDetectServelet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.FaceDetectServelet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>ExceptionShoppingServelet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.ExceptionShoppingServelet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UploadLogServelet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.UploadLogServelet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.TestServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>BoxRegisterServlet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.BoxRegisterServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UploadCalibrationFilesServlet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.UploadCalibrationFilesServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>UploadVideoServelet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.UploadVideoServelet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>KWoBoxCustomServlet</servlet-name>
+		<servlet-class>com.custom.kwobox.servlet.KWoBoxCustomServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>MonitorServerServlet</servlet-name>
+		<servlet-class>com.chinapalms.kwobox.servelet.MonitorServerServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>This is the description of my J2EE component</description>
+		<display-name>This is the display name of my J2EE component</display-name>
+		<servlet-name>CustomFaceSettingServelet</servlet-name>
+		<servlet-class>com.custom.kwobox.servlet.CustomFaceSettingServelet</servlet-class>
+	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadShoppingInfoServlet</servlet-name>
+    <servlet-class>com.chinapalms.kwobox.servelet.UploadShoppingInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UploadShelfTestDataServlet</servlet-name>
+    <servlet-class>com.chinapalms.kwobox.servelet.UploadShelfTestDataServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>KWoBoxServelet</servlet-name>
+		<url-pattern>/KWoBoxServelet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FaceSettingServelet</servlet-name>
+		<url-pattern>/FaceSettingServelet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FaceDetectServelet</servlet-name>
+		<url-pattern>/FaceDetectServelet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ExceptionShoppingServelet</servlet-name>
+		<url-pattern>/ExceptionShoppingServelet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadLogServelet</servlet-name>
+		<url-pattern>/UploadLogServelet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/TestServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BoxRegisterServlet</servlet-name>
+		<url-pattern>/BoxRegisterServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadCalibrationFilesServlet</servlet-name>
+		<url-pattern>/UploadCalibrationFilesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UploadVideoServelet</servlet-name>
+		<url-pattern>/UploadVideoServelet</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+    <!-- 对接商户服务器相关 -->
+	<servlet-mapping>
+		<servlet-name>KWoBoxCustomServlet</servlet-name>
+		<url-pattern>/KWoBoxCustomServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 监控Tomcat是否宕机的Servlet -->
+	<servlet-mapping>
+		<servlet-name>MonitorServerServlet</servlet-name>
+		<url-pattern>/MonitorServerServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CustomFaceSettingServelet</servlet-name>
+		<url-pattern>/CustomFaceSettingServelet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadShoppingInfoServlet</servlet-name>
+    <url-pattern>/UploadShoppingInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UploadShelfTestDataServlet</servlet-name>
+    <url-pattern>/UploadShelfTestDataServlet</url-pattern>
+  </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
